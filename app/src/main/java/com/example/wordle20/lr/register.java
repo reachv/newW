@@ -18,6 +18,9 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class register extends AppCompatActivity {
 
     //Variable Declaration
@@ -38,6 +41,7 @@ public class register extends AppCompatActivity {
         ParseUser nuser = new ParseUser();
         nuser.setUsername(user.getText().toString());
         nuser.setPassword(user.getText().toString());
+        nuser.put("friends", new ArrayList<String>());
 
         //User Registeration
         ans.setOnClickListener(new View.OnClickListener() {
